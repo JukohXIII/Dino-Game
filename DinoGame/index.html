@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dinosaur Game</title>
+    <style>
+        *{
+            padding:0px;
+            margin:0px;
+        }
+        body{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height:100vh;
+
+            /*Makes text unselectable*/
+            user-select: none;
+            /*Define if a given area can be manipulated by the user (moving, zooming)*/
+            touch-action: none;
+            /*Control the legend(callout) display when touch is hold*/
+            -webkit-touch-callout: none;
+            /*Same as user select for Chrome*/
+            -webkit-user-select: none;
+            /*???*/
+            -khtml-user-select:none;
+            /*Same as above for Mozilla*/
+            -moz-user-select: none;
+            -ms-user-select: none;
+            /*Allow to define one or several properties from outline-*/
+            outline: none;
+            /*Sets color that appears over a link while being tapped*/
+            -webkit-tap-highlight-color: rgba(255,255,255,0);
+        }
+        canvas{
+            border: 2px solid grey;
+        }
+    </style>
+    <script src="static/index.js" defer type="module"></script>
+</head>
+<body>
+    <canvas id="game"></canvas>
+</body>
+</html>
