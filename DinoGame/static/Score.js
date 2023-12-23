@@ -26,7 +26,7 @@ export default class Score{
 
         const fontSize = 20*this.scaleRatio;
         this.ctx.font = `${fontSize}px serif`;
-        this.ctx.fillStyle = "#525250";
+        this.ctx.fillStyle = "white";
         const scoreX = this.canvas.width - 75 * this.scaleRatio;
         const highScoreX = scoreX - 125 * this.scaleRatio;
 

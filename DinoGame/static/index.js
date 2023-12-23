@@ -7,6 +7,7 @@ const canvas = document.getElementById("game");
 //Creates a CanvasRenderingContext2D object that represents bi-dimensional context
 const ctx = canvas.getContext("2d");
 
+
 const GAME_SPEED_START = 1
 const GAME_SPEED_INCREMENT = 0.00001;
 
@@ -101,7 +102,7 @@ function getScaleRatio() {
 function showGameOver(){
     const fontSize = 70 * scaleRatio;
     ctx.font = `${fontSize}px Verdana`;
-    ctx.fillStyle='grey';
+    ctx.fillStyle='white';
     const x = canvas.width /4.5;
     const y = canvas.height/2;
     ctx.fillText("GAME OVER", x,y);
@@ -110,7 +111,7 @@ function showGameOver(){
 function showScore(){
     const fontSize = 30 * scaleRatio;
     ctx.font = `${fontSize}px Verdana`;
-    ctx.fillStyle='grey';
+    ctx.fillStyle='white';
     const x = canvas.width /2.5;
     const y = canvas.height/1.5;
     const values = Object.values(score);
@@ -140,7 +141,7 @@ function reset(){
 function showStartGameText(){
     const fontSize = 40 * scaleRatio;
     ctx.font = `${fontSize}px Verdana`;
-    ctx.fillStyle='grey';
+    ctx.fillStyle='white';
     const x = canvas.width /14;
     const y = canvas.height/2;
     ctx.fillText("Press space or tap screen to start", x,y);
@@ -150,7 +151,7 @@ function updateGameSpeed(frameTimeDelta){
     gameSpeed += frameTimeDelta * GAME_SPEED_INCREMENT;
 }
 function clearScreen(){
-    ctx.fillStyle = "white";
+    ctx.fillStyle = "black";
     ctx.fillRect(0,0, canvas.width, canvas.height);
 }
 
