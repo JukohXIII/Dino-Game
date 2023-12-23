@@ -107,6 +107,15 @@ function showGameOver(){
     ctx.fillText("GAME OVER", x,y);
 }
 
+function showScore(){
+    const fontSize = 40 * scaleRatio;
+    ctx.font = `${fontSize}px Verdana`;
+    ctx.fillStyle='grey';
+    const x = canvas.width /4.5;
+    const y = canvas.height/1.5;
+    ctx.fillText("Score : "+ score.valueOf(), x,y);
+}
+
 function setupGameReset(){
     if(!hasAddedEventListenerForRestart){
         hasAddedEventListenerForRestart=true;
@@ -138,7 +147,6 @@ function showStartGameText(){
 
 function updateGameSpeed(frameTimeDelta){
     gameSpeed += frameTimeDelta * GAME_SPEED_INCREMENT;
-    console.log(gameSpeed);
 }
 function clearScreen(){
     ctx.fillStyle = "white";
@@ -167,7 +175,7 @@ function gameLoop(currentTime){
     if(!gameOver && cactiController.collideWith(player)){
         gameOver = true;
         setupGameReset();
-        score.reset();
+        score.setHighScore();
     }
     //Draw game objects
     ground.draw();
@@ -176,6 +184,7 @@ function gameLoop(currentTime){
     score.draw();
     if(gameOver){
         showGameOver();
+        showScore();
     }
 
     if(waitingToStart){
