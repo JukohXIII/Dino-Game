@@ -108,12 +108,13 @@ function showGameOver(){
 }
 
 function showScore(){
-    const fontSize = 40 * scaleRatio;
+    const fontSize = 30 * scaleRatio;
     ctx.font = `${fontSize}px Verdana`;
     ctx.fillStyle='grey';
-    const x = canvas.width /4.5;
+    const x = canvas.width /2.5;
     const y = canvas.height/1.5;
-    ctx.fillText("Score : "+ score.valueOf(), x,y);
+    const values = Object.values(score);
+    ctx.fillText("Score : "+ Math.floor(values[0]), x,y);
 }
 
 function setupGameReset(){
@@ -132,7 +133,7 @@ function reset(){
     waitingToStart = false;
     ground.reset();
     cactiController.reset();
-    score.reset;
+    score.reset();
     gameSpeed = GAME_SPEED_START;
 }
 
